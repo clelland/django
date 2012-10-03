@@ -128,6 +128,6 @@ class Command(BaseCommand):
                 self.stderr.write("\nOperation cancelled.")
                 sys.exit(1)
 
-        UserModel.objects.db_manager(database).create_superuser(username=username, password=password, **other_data)
+        UserModel.objects.db_manager(database).create_superuser(username, password, **other_data)
         if verbosity >= 1:
             self.stdout.write("Superuser created successfully.")
